@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+@import 'shadcn-ui.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border scroll-smooth font-sora;
+  }
+}
+
+@layer utilities {
+  .bg-vignette-light {
+    background: radial-gradient(
+      ellipse at center,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 24%,
+      rgba(255, 255, 255, 1) 86%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+
+  .bg-vignette-dark {
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0) 24%,
+      rgba(0, 0, 0, 1) 86%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+
+  #cards:hover > .card::after {
+    @apply opacity-100;
+  }
+
+  .card {
+    @apply relative flex cursor-pointer flex-col rounded-[10px] before:z-[3] after:z-[1] hover:before:opacity-100;
+  }
+
+  .card::before,
+  .card::after {
+    @apply absolute left-0 top-0 h-full w-full rounded-[inherit] opacity-0 transition-opacity duration-500 content-[""];
+  }
+
+  .card::before {
+    background: radial-gradient(
+      800px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.06),
+      transparent 40%
+    );
+  }
+  .card::after {
+    background: radial-gradient(
+      600px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.4),
+      transparent 40%
+    );
+  }
+
+  .card > .card-content {
+    @apply absolute inset-px z-[2] flex grow flex-col rounded-[inherit] bg-card;
+  }
+}
