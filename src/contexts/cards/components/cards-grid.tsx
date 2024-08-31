@@ -47,19 +47,19 @@ export function CardsGrid({ cards }: CardsGridProps) {
   return (
     <section
       id="cards"
-      className={cn('w-full', 'container', 'flex flex-col flex-wrap justify-center gap-4 md:flex-row', 'cards')}
+      className={cn(
+        'container',
+        'w-full',
+        'cards',
+        'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4',
+      )}
+      // className={cn('w-full', 'container', 'flex flex-col flex-wrap justify-between gap-4 md:flex-row', 'cards')}
     >
       {cards.map((card, index) => (
-        <a
-          href={card.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          key={index}
-          className={cn('card', 'h-40 w-full md:w-80')}
-        >
+        <a href={card.link} target="_blank" rel="noopener noreferrer" key={index} className={cn('card', 'h-40')}>
           <Card className={cn('card-content', 'border-none', 'p-6')}>
             <CardHeader className="p-0">
-              <CardTitle>{card.title}</CardTitle>
+              <CardTitle className="text-xl">{card.title}</CardTitle>
               <CardDescription>{translate(card.description, cardsGridLanguages)}</CardDescription>
             </CardHeader>
           </Card>

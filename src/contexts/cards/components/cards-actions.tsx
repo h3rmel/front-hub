@@ -13,7 +13,6 @@ import { Input } from '@/components/ui/input';
 
 import { cn } from '@/lib/utils';
 
-import { AddCardDialog } from './add-card-dialog';
 import { formSchema } from './cards';
 import { cardsActionsLanguages } from './cards-actions.lng';
 
@@ -35,8 +34,7 @@ export function CardsActions({ form }: CardsActionsProps) {
   }, DEBOUNCE_TIME);
 
   return (
-    <section className={cn('relative', 'container', 'flex items-center justify-start gap-4')}>
-      <AddCardDialog />
+    <section className={cn('relative', 'container', 'w-full md:w-1/2', 'flex items-center justify-start gap-4')}>
       <Form {...form}>
         <FormField
           control={form.control}

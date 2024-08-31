@@ -18,6 +18,14 @@ export function HomePage() {
   const { translate } = useTranslation();
   const { theme } = useTheme();
 
+  function handleScrollToCards() {
+    const cardsElement = document.getElementById('home-cards');
+
+    if (cardsElement) {
+      cardsElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   return (
     <>
       <Head title="Home" description="Home" />
@@ -48,12 +56,12 @@ export function HomePage() {
               <p className={'text-wrap text-center'}>{translate('content', homeLanguages)}</p>
             </CardContent>
             <CardFooter className={'flex items-center justify-center'}>
-              <Button>{translate('get-started', homeLanguages)}</Button>
+              <Button onClick={handleScrollToCards}>{translate('get-started', homeLanguages)}</Button>
             </CardFooter>
           </Card>
         </section>
       </section>
-      <Cards />
+      <Cards id="home-cards" />
     </>
   );
 }

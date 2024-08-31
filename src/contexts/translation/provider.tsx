@@ -45,7 +45,7 @@ export function TranslationProvider({
 
     if (!language) return list[key][fallbackLanguage];
 
-    return list[key][language];
+    return list[key][language] ?? '';
   }
 
   useEffect(() => {
