@@ -2,11 +2,11 @@
   "name": "front-hub",
   "version": "1.4.0",
   "description": "The hub for all front-end tools.",
-  "author": "Isaac 'Hermel' Reginato <isaachermel@gmail.com> (https://github.com/isaachermel)",
+  "author": "Isaac 'Hermel' Reginato <isaachermel@gmail.com> (https://github.com/h3rmel)",
   "homepage": "https://github.com/h3rmel/front-hub",
   "bugs": {
     "url": "https://github.com/h3rmel/front-hub/issues",
-    "email": "kamome.brand@gmail.com"
+    "email": "isaachermel@gmail.com"
   },
   "repository": {
     "type": "git",
